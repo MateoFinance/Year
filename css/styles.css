@@ -162,7 +162,7 @@ body {
   height: 56px;
   border: none;
   outline: none;
-  text-align: center;
+  text-align: left;
   background-color: #faf6e7;
   border: 1px solid #000;
   color: #000;
@@ -174,13 +174,15 @@ body {
   text-transform: uppercase;
 }
 
+
 .recommendations {
+  position: absolute;
+  z-index: 1;
   list-style: none;
   padding: 0;
   border-top: none;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  position: relative;
   width: auto;
   color: var(--white);
   background-color: #faf6e7;
@@ -196,9 +198,11 @@ body {
 }
 
 .recommendations li {
-  padding: 10px;
+  display: flex;
+  padding: 10px 100px;
   cursor: pointer;
   border: 0.5px solid #000;
+  text-align: left;
 }
 
 .recommendations li:hover {
