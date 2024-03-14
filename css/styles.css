@@ -45,7 +45,8 @@ body {
   margin: 0 auto;
   background-color: var(--dark-bg);
   opacity: 0.8;
-  min-height: 100vh;
+  min-height: 150vh;
+  height: auto;
   overflow: hidden;
 }
 
@@ -262,6 +263,11 @@ body {
   border: 1px solid var(--white);
   border-radius: 50%;
   border: 2px solid #000;
+  filter: grayscale(100%);
+}
+
+.product-image:hover {
+  filter: grayscale(0%);
 }
 
 .product-nama {
@@ -270,7 +276,7 @@ body {
   color: #000;
   text-align: left;
   line-height: 1.4;
-  font-family: "Chicle", serif;
+  font-family: "Abril Fatface", serif;
 }
 
 .product-info {
@@ -280,6 +286,7 @@ body {
   font-size: 13px;
   margin-top: 5px;
   font-family: "Coiny", system-ui;
+  color: #000;
 }
 
 .product-info span {
@@ -309,7 +316,6 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  ;
   margin: auto;
   background-color: var(--dark-bg);
   /* Untuk menempatkan di tengah secara horizontal */
