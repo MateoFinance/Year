@@ -34,3 +34,138 @@
     </text>
   </svg>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-details">
+  <div class="con-details">
+    <div class="header-details">
+      <div id="closeButton" class="left">
+        <a href="#"><i class="fas fa-chevron-left"></i> Kembali</a>
+      </div>
+      <div class="right">
+        <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+      </div>
+    </div>
+
+    <div class="product-details-new">
+      <article>
+        <div class="top">
+          <p>printed in Turkey No.4145.25</p>
+          <div class="row">
+            <div class="block">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25555/turk.png" alt="Turkish Airlines Logo"
+                title="Turkish Airlines">
+            </div>
+            <div class="block">
+              <div class="punch-hole">
+              </div>
+            </div>
+            <div class="block">
+              <p>THY</p>
+            </div>
+          </div>
+        </div>
+        <div class="image-det">
+          <img src="https://i.pinimg.com/564x/8c/85/a9/8c85a98a445d87ec6d8c3a84fd7985cc.jpg" alt="">
+        </div>
+        <div class="main">
+          <h3>Alfin Firmansyah</h3>
+          <div class="row">
+            <h3></h3>
+            <h2> Siswa</h2>
+            <h1>JFK</h1>
+          </div>
+          <div class="container-row">
+            <div class="row">
+              <h2> Kelas</h2>
+              <p>${product.kelas}</p>
+            </div>
+            <div class="row">
+              <h2> Jurusan</h2>
+              <p>${product.jurusan}</p>
+            </div>
+          </div>
+          <div class="container-row">
+            <div class="row">
+              <h2> Tanggal Lahir</h2>
+              <p>${product.tanggal_lahir}</p>
+            </div>
+            <div class="row">
+              <h2> Alamat</h2>
+              <p>${product.alamat.jalan}, ${product.alamat.kota}, ${product.alamat.provinsi}, ${product.alamat.kode_pos}
+              </p>
+            </div>
+          </div>
+          <div class="container-row">
+            <div class="row">
+              <h2>Nomor</h2>
+              <p>${product.nomor_telepon}</p>
+            </div>
+            <div class="row">
+              <h2>Email</h2>
+              <p>${product.email}</p>
+            </div>
+          </div>
+          <div class="container-row">
+            <div class="row">
+              <h2>Prestasi</h2>
+              <ul>
+                ${product.prestasi.map(prestasi => `<li>${prestasi.judul} (${prestasi.tahun})</li>`).join('')}
+              </ul>
+            </div>
+            <div class="row">
+              <h2>Kegiatan</h2>
+              <ul>
+                ${product.kegiatan.map(kegiatan => `<li>${kegiatan}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+          <div class="container-row">
+            <div class="row">
+              <h2>Deskripsi</h2>
+              <p>${product.deskripsi}</p>
+            </div>
+            <div class="row">
+              <h2>Foto</h2>
+
+            </div>
+          </div>
+      </article>
+      <article>
+        
+      </article>
+    </div>
+  </div>
+</div>
+
+
+      

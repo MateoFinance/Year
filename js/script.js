@@ -299,88 +299,90 @@ function displayProductDetails(product) {
         <a href="#"><i class="fas fa-ellipsis-h"></i></a>
       </div>
     </div>
-    
+
     <div class="product-details-new">
-      <div class="product-details-image-new">
-        <div class="image-ratio">
-          <div class="ratio-inner">
-            <img src="${product.foto}" alt="${product.nama}" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
-            <h1 class="product-details-name">${product.nama}</h1>
-            <p class="product-details-name">${product.quote}</p>
+      <article>
+        <div class="top">
+          <p>printed in Turkey No.4145.25</p>
+          <div class="row">
+            <div class="block">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25555/turk.png" alt="Turkish Airlines Logo" 
+                title="Turkish Airlines">
+            </div>
+            <div class="block">
+              <div class="punch-hole">
+              </div>
+            </div>
+            <div class="block">
+              <p>THY</p>
+            </div>
           </div>
         </div>
+        <div class="image-det">
+        <img src="${product.image}" alt="${product.nama}"  onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+        </div>
+        <div class="main">
+          <h3>Alfin Firmansyah</h3>
+          <div class="row">
+            <h3></h3>
+            <h2> Siswa</h2>
+            <h1>JFK</h1>
+          </div>
+          <div class="container-row">
+            <div class="row">
+              <h2> Kelas</h2>
+              <p>${product.kelas}</p>
+            </div>
+            <div class="row">
+              <h2> Jurusan</h2>
+              <p>${product.jurusan}</p>
+            </div>
+          </div>
+          <div class="container-row">
+            <div class="row">
+              <h2> Tanggal Lahir</h2>
+              <p>${product.tanggal_lahir}</p>
+            </div>
+            <div class="row">
+              <h2> Alamat</h2>
+              <p>${product.alamat.jalan}, ${product.alamat.kota}, ${product.alamat.provinsi}, ${product.alamat.kode_pos}
+              </p>
+            </div>
+          </div>
+          <div class="container-row">
+            <div class="row">
+              <h2>Prestasi</h2>
+              <ul>
+                ${product.prestasi.map(prestasi => `<li>${prestasi.judul} (${prestasi.tahun})</li>`).join('')}
+              </ul>
+            </div>
+            <div class="row">
+              <h2>Kegiatan</h2>
+              <ul>
+                ${product.kegiatan.map(kegiatan => `<li>${kegiatan}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+          <div class="container-row">
+            <div class="row">
+              <h2>Deskripsi</h2>
+              <p>${product.deskripsi}</p>
+            </div>
+            <div class="row">
+              <h2>Foto</h2>
+            </div>
+          </div>
+      </article>
+      <div class="container-code">
+      <div class="button-container">
+      <button class="button">Tombol 1</button>
+      <button class="button">Tombol 2</button>
+    </div>
       </div>
     </div>
-    <div class="student-details-container">
-  <div class="student-details-section">
-  <div class="umzo">
-    <img id="zodiacIcon" src="" alt="Zodiac Icon">
-    </div>
-    <h2 class="section-title">Informasi Pribadi</h2>
-    <p class="detail"><strong>Kelas:</strong> ${product.kelas}</p>
-    <p class="detail"><strong>Jurusan:</strong> ${product.jurusan}</p>
-    <p class="detail"><strong>Tanggal Lahir:</strong> ${product.tanggal_lahir} <span id="umur"></span></p>
-    <p class="detail"><strong>Alamat:</strong> ${product.alamat.jalan}, ${product.alamat.kota}, ${product.alamat.provinsi}, ${product.alamat.kode_pos}</p>
-    <p class="detail"><strong>Nomor Telepon:</strong> ${product.nomor_telepon}</p>
-    <p class="detail"><strong>Email:</strong> ${product.email}</p>
-  </div>
-
-  <div class="student-details-section">
-    <h2 class="section-title">Prestasi</h2>
-    <ul class="detail-list">
-      ${product.prestasi.map(prestasi => `<li>${prestasi.judul} (${prestasi.tahun})</li>`).join('')}
-    </ul>
-  </div>
-
-  <div class="student-details-section">
-    <h2 class="section-title">Kegiatan</h2>
-    <ul class="detail-list">
-      ${product.kegiatan.map(kegiatan => `<li>${kegiatan}</li>`).join('')}
-    </ul>
-  </div>
-
-  <div class="student-details-section">
-    <h2 class="section-title">Deskripsi</h2>
-    <p class="detail">${product.deskripsi}</p>
-  </div>
-  
-  <div class="student-details-section">
-    <h2 class="section-title">Deskripsi</h2>
-    <div class="id-card-holder">
-		<div class="id-card">
-			<div class="header">
-				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Harvard_University_coat_of_arms.svg/150px-Harvard_University_coat_of_arms.svg.png">
-        <p class="id">PLETIA HIGH SCHOOL</p>
-        <div class="clear"></div>
-      </div>
-      <span class="b-border"></span>
-      
-      <div class="card-detail">
-        <div class="stu-photo">
-<img src="${product.foto}" alt="student image"/> 
-        </div>
-        <div class="stu-info">
-          <p>Name : <span> Vinod Sharma</span></p>
-          <p>Date of Birth :<span> Prakash Sharma</span></p>
-          <p>Class : <span> 02 JUL 2019</span></p>
-        </div>
-        
-        <div class="clear"></div>
-      </div>
-      
-      <footer>
-	
-      </footer>
-		</div>
-	</div>
-  </div>
-  
-</div>
   </div>
 </div>
 
-  </div>
-</div>
 `;
 
   const closeButton = document.getElementById('closeButton');

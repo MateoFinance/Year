@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oi&family=Purple+Purse&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Coiny&family=Oi&family=Purple+Purse&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
 
 * {
   margin: 0;
@@ -64,7 +65,7 @@ body {
 
 .record {
   position: relative;
-  top: -200px;
+  bottom: 200px;
   width: 100%;
   animation: spin 4s linear infinite;
 }
@@ -74,6 +75,7 @@ body {
   position: relative;
   top: -20em;
   margin-bottom: -15em;
+  padding: 0px 10px;
 }
 
 .circle-text span {
@@ -131,42 +133,27 @@ body {
 }
 
 .search {
+  display: inline-flex;
   margin-right: 10px;
+  background-color: #faf6e7;
+  border: 1px solid #000;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .search-form {
   display: inline-flex;
-  height: 56px;
-  background-color: #faf6e7;
-  border: 1px solid #000;
-  color: #000;
-  border-radius: 5px;
-  padding: 15px;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: 0.105px;
+  overflow: hidden;
+  padding: 10px;
 }
 
 .search-input {
-  border: none;
-  outline: none;
-  color: var(--white);
-  background-color: #faf6e7;
-  font-family: "Coiny", system-ui;
-  text-transform: uppercase;
-}
-
-.category-filter {
-  height: 56px;
+  width: 100%;
   border: none;
   outline: none;
   text-align: left;
   background-color: #faf6e7;
-  border: 1px solid #000;
   color: #000;
-  padding: 8px 30px;
   font-size: 14px;
   font-weight: 600;
   border-radius: 5px;
@@ -174,21 +161,39 @@ body {
   text-transform: uppercase;
 }
 
+.category-filter {
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  background-color: #faf6e7;
+  border: 1px solid #000;
+  color: #000;
+  padding: 15px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  font-family: "Coiny", system-ui;
+  text-transform: uppercase;
+}
+
+.recommendations-container {
+  background-color: #68C7C1;
+}
 
 .recommendations {
-  position: absolute;
+  text-align: left;
   z-index: 1;
   list-style: none;
   padding: 0;
   border-top: none;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  width: auto;
   color: var(--white);
+  max-height: 200px;
   background-color: #faf6e7;
   z-index: 1;
   display: none;
-  max-height: 250px;
   overflow-y: scroll;
   border: 1px solid #000;
 }
@@ -199,7 +204,7 @@ body {
 
 .recommendations li {
   display: flex;
-  padding: 10px 100px;
+  padding: 10px 20px;
   cursor: pointer;
   border: 0.5px solid #000;
   text-align: left;
@@ -265,7 +270,6 @@ body {
   text-align: left;
   line-height: 1.4;
   font-family: "Chicle", serif;
-  font-family: "Purple Purse", serif;
 }
 
 .product-info {
@@ -314,79 +318,7 @@ body {
   height: 100vh;
 }
 
-.container-details::-webkit-scrollbar {
-  width: 8px;
-}
 
-.container-details::-webkit-scrollbar-track {
-  background-color: var(--dark-bg);
-}
-
-.container-details::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
-}
-
-.container-details::-webkit-scrollbar-thumb:hover {
-  background-color: var(--gold-color);
-}
-
-
-/* Style untuk container utama */
-.student-details-container {
-  display: flex;
-  flex-wrap: wrap;
-  background-image: linear-gradient(#f7d098 2.6px, transparent 2.6px), linear-gradient(90deg, #f7d098 2.6px, transparent 2.6px), linear-gradient(#f7d098 1.3px, transparent 1.3px), linear-gradient(90deg, #f7d098 1.3px, #FAEBCC 1.3px);
-  background-size: 65px 65px, 65px 65px, 13px 13px, 13px 13px;
-  background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px, -1.3px -1.3px;
-  padding: 20px;
-}
-
-/* Style untuk setiap bagian detail siswa */
-.student-details-section {
-  flex: 1 1 50%;
-  /* 50% width on large screens, full width on small screens */
-  padding: 20px;
-  background-color: #f7d098;
-  margin: 10px;
-
-}
-
-/* Style untuk judul setiap bagian */
-.section-title {
-  font-size: 15px;
-  margin-bottom: 10px;
-  color: #333;
-  background-color: #68C7C1;
-  border: 4px solid #794A3A;
-  padding: 10px;
-
-}
-
-/* Style untuk detail siswa */
-.detail {
-  margin-bottom: 10px;
-  color: #794A3A;
-  font-size: 12px;
-}
-
-/* Style untuk daftar prestasi dan kegiatan */
-.detail-list {
-  list-style: none;
-  padding: 0;
-}
-
-.detail-list li {
-  margin-bottom: 5px;
-  color: #555;
-  font-size: 12px;
-}
-
-/* Hover effect untuk daftar prestasi dan kegiatan */
-.detail-list li:hover {
-  color: #000;
-  cursor: pointer;
-}
 
 /* Animasi ketika hover pada bagian detail */
 .student-details-section:hover {
@@ -402,30 +334,6 @@ body {
   }
 }
 
-.clear {
-  clear: both;
-}
-
-.id-card-holder {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.id-card {
-  background-color: #DCDFCA;
-  padding: 0px;
-  display: block;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 3px solid #794A3A;
-}
-
-.header {
-  padding: 10px;
-  background-color: #E58D3C;
-  text-align: left;
-
-}
 
 .header img {
   width: 30px;
@@ -439,87 +347,12 @@ body {
   font-weight: 600;
 }
 
-.id {
-  display: inline-block;
-  float: left;
-  font-size: 15px;
-  text-transform: uppercase;
-  color: #fff;
-  margin-left: 60px;
-}
 
-.b-border {
-  height: 2px;
-  display: block;
-  background-color: #E58D3C;
-  margin-top: 1px;
-}
-
-.card-detail {
-  width: 100%;
-  display: flex;
-  padding: 10px;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
-}
-
-.stu-photo {
-  float: left;
-  width: 100px;
-}
-
-.stu-photo img {
-  width: 100%;
-  border: 1px solid #4a0a2c;
-  border-radius: 5px;
-}
-
-.stu-info {
-  float: left;
-  width: calc(100% - 100px);
-  padding: 0 10px;
-  box-sizing: border-box;
-  text-align: left;
-  text-transform: capitalize;
-}
-
-.stu-info h3 {
-  font-size: 15px;
-  margin: 0 0 10px 0;
-  padding: 5px 15px;
-  background-color: #4a0a2c9e;
-  border-radius: 70px;
-  text-align: center;
-  color: #fff;
-  border: 1px solid #4a0a2cfc;
-}
-
-.stu-info p {
-  font-size: 12px;
-  margin: 0 0 5px 0;
-  font-weight: 300;
-}
-
-.stu-info p span {
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-footer {
-  padding: 5px 0;
-  border-top: 1px solid #000;
-}
-
-footer p {
-  font-size: 7px;
-  margin: 0 0 2px 0;
-}
 
 
 
 .header-details {
-
+  background-color: #faf6e7;
   top: 0;
   left: 0;
   width: 100%;
@@ -551,18 +384,8 @@ footer p {
   margin-left: 0;
 }
 
-.product-details-container {
-  margin: 20px;
-}
-
-
-.product-details-image {}
-
-.product-details-image img {}
-
 .product-details-new {
-  background-color: #794A3A;
-
+  background-color: #99aaaa;
 }
 
 
@@ -876,6 +699,168 @@ footer p {
   z-index: 5;
 }
 
+article {
+  margin: 0 20px;
+  display: flex;
+  flex-flow: column;
+  background-color: #faf6e7;
+  clip-path: polygon(15% 0, 85% 0, 100% 10%, 100% 100%, 0 100%, 0 10%);
+  padding: 0px 20px;
+  border-bottom: 3px dotted #000000;
+}
+
+.container-code {
+  margin: 0 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: radial-gradient(at 85.4% 36.8%, hsl(348, 61%, 77%) 0px, transparent 50%), radial-gradient(at 22.6% 78.0%, hsl(198, 54%, 74%) 0px, transparent 50%), radial-gradient(at 20.0% 27.8%, hsl(43, 90%, 75%) 0px, transparent 50%), radial-gradient(at 73.7% 85.9%, hsl(43, 90%, 75%) 0px, transparent 50%), radial-gradient(at 41.8% 55.2%, hsl(43, 90%, 75%) 0px, transparent 50%)
+}
+
+.button-container {
+  display: flex; /* Menggunakan flexbox untuk menyusun tombol secara horizontal */
+}
+
+.button {
+  padding: 10px 20px; /* Padding agar tombol terlihat lebih baik */
+  margin-right: 30px; /* Jarak antara tombol */
+  background-color: #e89fae;
+  border: 1px solid #000;
+  color: #000; /* Warna teks */
+  border-radius: 5px; /* Membuat sudut tombol melengkung */
+  cursor: pointer; /* Mengubah kursor saat diarahkan ke tombol */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Warna latar belakang saat kursor diarahkan ke tombol */
+}
+
+.row h2 {
+  text-transform: uppercase;
+  font-family: "Coiny", system-ui;
+  font-weight: 300;
+  color: #000000;
+  font-size: 15px;
+}
+
+.row h1 {
+  font-size: 10rem;
+  text-transform: uppercase;
+  font-family: 'Squada One', cursive;
+  color: #E02F2C
+}
+
+.row p, li {
+  color: #000;
+  margin-right: 10px;
+  list-style: none;
+}
+
+.row li {
+  list-style: circle;
+  margin-left: 15px;
+}
+
+.top {
+  margin-bottom: 2rem;
+}
+
+.top .row .block {
+  flex-grow: 1;
+}
+
+.block img {
+  display: block;
+  margin: auto;
+}
+
+.top .block p {
+  color: #E02F2C;
+  font-size: 2rem;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.top p {
+  text-transform: uppercase;
+  font-size: .75rem;
+  text-align: center;
+  align-self: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #343E6F;
+  margin-top: 20px;
+  margin-bottom: 1rem;
+}
+
+.top img {
+  width: 72px;
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+}
+
+.main h3 {
+  font-size: 15px;
+  text-align: left;
+  padding: 10px;
+  font-family: 'Squada One', cursive;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+
+.container-row {
+  display: flex;
+  justify-content: flex-end; /* Mengubah dari space-around menjadi flex-start */
+  text-align: left;
+  padding: 10px;
+  border-top: 1px solid #000;
+}
+
+
+.row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.image-det img{
+  width: 100%;
+  object-fit: cover;
+  height: 300px;
+  border-radius: 5px;
+  border: 2px solid #000;
+}
+
+.center {
+  display: flex;
+}
+
+.numbers {
+  font-family: 'Rozha One', serif;
+  color: #7B1E17;
+  font-size: 15px;
+  position: relative;
+  margin: auto;
+}
+
+sup {
+  position: relative;
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+.marks {
+  font-family: 'Kristi', cursive;
+  font-size: 4.5rem;
+  color: rgba(0,0,0,.4);
+  
+}
+
 
 @keyframes bubbleChat {
   0% {
@@ -913,5 +898,21 @@ footer p {
     /* Membuat container berada di tengah halaman */
     background-color: var(--warna-terang);
     display: flex;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .record {
+    position: relative;
+    bottom: 170px;
+    width: 100%;
+  }
+  .circle-text {
+    text-align: center;
+    position: relative;
+    top: -280px;
+    z-index: 20;
+    margin-bottom: -17em;
   }
 }
