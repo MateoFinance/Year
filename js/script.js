@@ -293,7 +293,7 @@ function displayProductDetails(product) {
   <div class="con-details">
     <div class="header-details">
       <div id="closeButton" class="left">
-        <a href="#"><i class="fas fa-chevron-left"></i> Kembali</a>
+        <a href="#"><i class="fas fa-chevron-left"></i></a>
       </div>
       <div class="right">
         <a href="#"><i class="fas fa-ellipsis-h"></i></a>
@@ -303,7 +303,7 @@ function displayProductDetails(product) {
     <div class="product-details-new">
       <article>
         <div class="top">
-          <p>printed in Turkey No.4145.25</p>
+          <p>Student Number ${product.alamat.kode_pos}</p>
           <div class="row">
             <div class="block">
               <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25555/turk.png" alt="Turkish Airlines Logo" 
@@ -314,19 +314,18 @@ function displayProductDetails(product) {
               </div>
             </div>
             <div class="block">
-              <p>THY</p>
+              <p>PLETIA HIGH SCHOOL</p>
             </div>
           </div>
         </div>
         <div class="image-det">
-        <img src="${product.image}" alt="${product.nama}"  onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+        <img src="${product.foto}" alt="${product.nama}"  onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
         </div>
         <div class="main">
-          <h3>Alfin Firmansyah</h3>
+          <h3>${product.nama} #${product.kelas}</h3>
           <div class="row">
-            <h3></h3>
-            <h2> Siswa</h2>
-            <h1>JFK</h1>
+            <h4>Informasi Siswa</h4>
+            <h1>PHS</h1>
           </div>
           <div class="container-row">
             <div class="row">
@@ -369,7 +368,8 @@ function displayProductDetails(product) {
               <p>${product.deskripsi}</p>
             </div>
             <div class="row">
-              <h2>Foto</h2>
+              <h2>Barcode</h2>
+              <img src="barcode.png" alt="" srcset="">
             </div>
           </div>
       </article>

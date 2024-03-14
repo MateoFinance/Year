@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oi&family=Purple+Purse&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Coiny&family=Oi&family=Purple+Purse&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 * {
   margin: 0;
@@ -308,15 +309,13 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
+  ;
   margin: auto;
   background-color: var(--dark-bg);
   /* Untuk menempatkan di tengah secara horizontal */
 }
 
-.con-details {
 
-  height: 100vh;
-}
 
 
 
@@ -352,7 +351,7 @@ body {
 
 
 .header-details {
-  background-color: #faf6e7;
+  background-color: #99aaaa;
   top: 0;
   left: 0;
   width: 100%;
@@ -377,7 +376,11 @@ body {
 
 .header-details a {
   text-decoration: none;
-  color: var(--white);
+  color: #000;
+  background-color: #e89fae;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
 }
 
 .header-details .right a:last-child {
@@ -386,70 +389,15 @@ body {
 
 .product-details-new {
   background-color: #99aaaa;
+  padding-bottom: 4rem;
 }
 
 
 .product-details-new:before {}
 
-/* The rest of your existing styles */
-.image-ratio {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  bottom: -20px;
-  background-color: #ffffff;
-  padding: 15px;
-  transform: rotate(6deg);
-
-  text-align: center;
-}
-
-.image-ratio:before {}
-
-.image-ratio .ratio-inner {}
-
-.image-ratio .ratio-inner img {
-  width: 400px;
-  height: 400px;
-  object-fit: cover;
 
 
 
-}
-
-
-
-
-
-.umzo img {
-  width: 50px;
-}
-
-
-.product-details-nama {
-  color: var(--white);
-  font-size: 20px;
-}
-
-.play-button {
-  width: 100%;
-  background-color: var(--gold-color);
-  display: block;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  padding: 10px 20px;
-  border: none;
-  font-weight: 600;
-  margin-bottom: 10px;
-  border-radius: 10px;
-}
-
-.product-details-info {
-  font-size: 15px;
-  list-style: none;
-}
 
 
 
@@ -710,38 +658,45 @@ article {
 }
 
 .container-code {
+  background-color: #faf6e7;
   margin: 0 20px;
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: radial-gradient(at 85.4% 36.8%, hsl(348, 61%, 77%) 0px, transparent 50%), radial-gradient(at 22.6% 78.0%, hsl(198, 54%, 74%) 0px, transparent 50%), radial-gradient(at 20.0% 27.8%, hsl(43, 90%, 75%) 0px, transparent 50%), radial-gradient(at 73.7% 85.9%, hsl(43, 90%, 75%) 0px, transparent 50%), radial-gradient(at 41.8% 55.2%, hsl(43, 90%, 75%) 0px, transparent 50%)
+  
 }
 
 .button-container {
-  display: flex; /* Menggunakan flexbox untuk menyusun tombol secara horizontal */
+  display: flex;
+  /* Menggunakan flexbox untuk menyusun tombol secara horizontal */
 }
 
 .button {
-  padding: 10px 20px; /* Padding agar tombol terlihat lebih baik */
-  margin-right: 30px; /* Jarak antara tombol */
+  padding: 10px 50px;
+  /* Padding agar tombol terlihat lebih baik */
+  /* Jarak antara tombol */
+  margin: 20px;
   background-color: #e89fae;
   border: 1px solid #000;
-  color: #000; /* Warna teks */
-  border-radius: 5px; /* Membuat sudut tombol melengkung */
-  cursor: pointer; /* Mengubah kursor saat diarahkan ke tombol */
+  color: #000;
+  /* Warna teks */
+  border-radius: 5px;
+  /* Membuat sudut tombol melengkung */
+  cursor: pointer;
+  /* Mengubah kursor saat diarahkan ke tombol */
 }
 
 .button:hover {
-  background-color: #0056b3; /* Warna latar belakang saat kursor diarahkan ke tombol */
+  opacity: 90%;
 }
 
 .row h2 {
   text-transform: uppercase;
-  font-family: "Coiny", system-ui;
-  font-weight: 300;
+  font-weight: 600;
   color: #000000;
   font-size: 15px;
+  margin-bottom: 5px;
 }
 
 .row h1 {
@@ -751,15 +706,30 @@ article {
   color: #E02F2C
 }
 
-.row p, li {
+.row h4 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #E02F2C;
+  text-transform: uppercase;
+  font-family: 'Squada One', cursive;
+  margin-top: 10px;
+}
+
+.row p,
+li {
   color: #000;
   margin-right: 10px;
   list-style: none;
+  font-size: 12px;
 }
 
 .row li {
   list-style: circle;
   margin-left: 15px;
+}
+
+.row img {
+  width: 100%;
 }
 
 .top {
@@ -803,18 +773,21 @@ article {
 }
 
 .main h3 {
-  font-size: 15px;
+  font-size: 20px;
   text-align: left;
   padding: 10px;
-  font-family: 'Squada One', cursive;
-  font-weight: 100;
-  text-transform: uppercase;
+  font-family: "Abril Fatface", serif;
+  font-weight: 600;
+  color: #000;
+  border-bottom: 1px solid #000;
+  text-align: center;
 }
 
 
 .container-row {
   display: flex;
-  justify-content: flex-end; /* Mengubah dari space-around menjadi flex-start */
+  justify-content: flex-end;
+  /* Mengubah dari space-around menjadi flex-start */
   text-align: left;
   padding: 10px;
   border-top: 1px solid #000;
@@ -828,7 +801,7 @@ article {
 }
 
 
-.image-det img{
+.image-det img {
   width: 100%;
   object-fit: cover;
   height: 300px;
@@ -857,8 +830,8 @@ sup {
 .marks {
   font-family: 'Kristi', cursive;
   font-size: 4.5rem;
-  color: rgba(0,0,0,.4);
-  
+  color: rgba(0, 0, 0, .4);
+
 }
 
 
@@ -908,6 +881,7 @@ sup {
     bottom: 170px;
     width: 100%;
   }
+
   .circle-text {
     text-align: center;
     position: relative;
