@@ -661,6 +661,10 @@ body {
   background-color: #e89fae;
 }
 
+#home {
+  min-height: 200vh;
+}
+
 #categories, #favorites {
   background-color: #99aaaa;
   min-height: 200vh;
@@ -808,6 +812,68 @@ body {
   margin-top: 20px;
 }
 
+#onboarding-container {
+ 
+}
+.onboarding-content {
+  position: fixed;
+  z-index: 99999999999999999;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+  max-width: 480px;
+  background-color: #faf6e7;
+}
+
+.page-container {
+  padding: 20px;
+}
+
+.page {
+  display: none;
+  padding: 20px;
+}
+
+.page h1, .page h2 {
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.page img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.page .content {
+  margin-bottom: 20px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.prev-btn, .next-btn, .close-btn {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  margin: 0 10px;
+}
+
+.prev-btn:hover, .next-btn:hover, .close-btn:hover {
+  background-color: #0056b3;
+}
+
+
 
 .quote-container {
   position: relative;
@@ -851,6 +917,8 @@ article {
   padding: 0px 20px;
   border-bottom: 3px dotted #000000;
 }
+
+
 
 .container-code {
   background-color: #faf6e7;
