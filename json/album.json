@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Thriller",
+    "artist": "Michael Jackson",
+    "genre": "Pop",
+    "tanggal": 1982,
+    "cover": "https://example.com/thriller-cover.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Abbey Road",
+    "artist": "The Beatles",
+    "genre": "Rock",
+    "tanggal": 1969,
+    "cover": "https://example.com/abbey-road-cover.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Kind of Blue",
+    "artist": "Miles Davis",
+    "genre": "Jazz",
+    "tanggal": 1959,
+    "cover": "https://example.com/kind-of-blue-cover.jpg"
+  },
+  {
+    "id": 4,
+    "title": "The Marshall Mathers LP",
+    "artist": "Eminem",
+    "genre": "Hip-Hop",
+    "tanggal": 2000,
+    "cover": "https://example.com/marshall-mathers-lp-cover.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Random Access Memories",
+    "artist": "Daft Punk",
+    "genre": "Electronic",
+    "tanggal": 2013,
+    "cover": "https://example.com/random-access-memories-cover.jpg"
+  }
+]

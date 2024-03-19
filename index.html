@@ -27,7 +27,7 @@
         <header class="header-home">
 
             <div class="header-center">
-                <img src="initial-image.jpg" alt="Logo" id="center-image">
+                <img src="logokls.png" alt="Logo" id="center-image">
             </div>
 
         </header>
@@ -128,7 +128,7 @@
 
 
 
-                   
+
 
 
 
@@ -178,9 +178,7 @@
             <div class="greeting-container">
                 <h1 id="greeting"></h1>
             </div>
-            <div id="quoteContainer" class="quote-container">
-                <p id="quoteText" class="quote-text"></p>
-            </div>
+           
         </div>
 
 
@@ -192,8 +190,28 @@
 
         <div class="content" id="favorites" style="display: none;">
             <!-- Content for Favorites tab -->
-            <h2>Favorites</h2>
-            <p>Your favorite recipes will appear here.</p>
+            <div class="memories-album-container">
+                <div class="memories-album">
+                    <h1>Memories</h1>
+                </div>
+                <div class="memories-search-container">
+                    <input type="text" class="memories-search" placeholder="Search for albums...">
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div id="quoteContainer" class="quote-container">
+                    <p id="quoteText" class="quote-text"></p>
+                </div>
+            </div>
+
+            <div id="categoryButtons"></div>
+            <div id="albumList"></div>
+            <div id="albumDetails"></div>
+
         </div>
 
         <script>
@@ -230,6 +248,7 @@
             });
         </script>
         <script src="js/script.js"></script>
+        <script src="js/album.js"></script>
         <script>
             AOS.init();
             // JavaScript to change the center image on scroll
@@ -241,9 +260,10 @@
                 if (scrolled > 100) {
                     img.src = 'favicon.png';
                 } else {
-                    img.src = 'initial-image.jpg';
+                    img.src = 'logokls.png';
                 }
             });
+            
         </script>
 
 </body>

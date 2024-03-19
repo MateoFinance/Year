@@ -67,7 +67,7 @@ body {
 
 .record {
   position: relative;
-  bottom: 200px;
+  bottom: 250px;
   width: 100%;
   animation: spin 4s linear infinite;
 }
@@ -75,8 +75,8 @@ body {
 .circle-text {
   text-align: center;
   position: relative;
-  top: -20em;
-  margin-bottom: -15em;
+  top: -25em;
+  margin-bottom: -20em;
   padding: 0px 10px;
 }
 
@@ -102,12 +102,13 @@ body {
   background-color: #faf6e7;
   border-bottom: 2px solid #ccc;
   padding: 10px 20px;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
   max-width: 480px;
 }
+
 
 .header-left,
 .header-right {
@@ -123,9 +124,7 @@ body {
 }
 
 .header-center img {
-  max-width: 150px;
-  border: 4px solid #ccc;
-  border-radius: 50%;
+  max-width: 50px;
 }
 
 .search-category-container {
@@ -263,7 +262,7 @@ body {
   border: 1px solid var(--white);
   border-radius: 50%;
   border: 2px solid #000;
-  filter: grayscale(100%);
+  filter: grayscale(0%);
 }
 
 .product-image:hover {
@@ -537,6 +536,8 @@ body {
 
 
 
+
+
 /* Styling for the alternate product list */
 #alternateProductList {
   margin: 20px;
@@ -554,11 +555,8 @@ body {
 .alternate-product-card {
   text-align: left;
   margin-top: auto;
-  display: inline-block;
-  box-sizing: content-box;
-
-  position: relative;
-  width: 370px;
+  border-radius: 5px;
+  width: 100%;
   height: 362px;
   padding: 1em;
   color: #000;
@@ -619,6 +617,197 @@ body {
   color: var(--grey-text);
   margin: 5px 0;
 }
+
+.memories-album-container {
+  background-color: #faf6e7;
+  width: 100%;
+}
+
+.memories-album {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px;
+}
+
+.memories-album h1 {
+  font-family: "Oi", serif;
+  font-size: 30px;
+  color: #faf6e7;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #E02F2C;
+  -webkit-text-fill-color: #e89fae;
+}
+
+#categoryButtons {
+  margin: 10px 20px;
+}
+
+.category-button {
+  font-family: "Coiny", system-ui;
+  margin: 5px;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #faf6e7;
+  border: 1px solid #000;
+  color: #000;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-button:hover {
+  background-color: #e89fae;
+}
+
+#categories, #favorites {
+  background-color: #99aaaa;
+  min-height: 200vh;
+}
+
+
+.memories-search-container {
+
+
+  margin-bottom: 20px;
+  margin: 20px;
+}
+
+.memories-search {
+  width: 100%;
+  padding: 10px;
+  
+  font-size: 16px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+  background-color: #faf6e7;
+}
+
+.social-icon {
+  margin-top: 20px;
+  display: inline-block;
+  margin-left: 5px;
+  border: 1px solid #000;
+  border-radius: 50px;
+
+}
+
+.social-icon i {
+  font-size: 20px;
+  color: #555;
+  transition: color 0.3s ease;
+  padding: 10px 10px;
+}
+
+.social-icon:hover i {
+  color: #e89fae;
+}
+
+/* Gaya untuk daftar album */
+#albumList {
+  margin: 20px;
+}
+
+.album-item {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.album-item-container {
+  margin-top: 10px;
+  text-align: left;
+  border-radius: 5px;
+  width: 100%;
+  height: 362px;
+  padding: 1em;
+  color: #000;
+  font-size: 16px;
+  background-size: 51% 100%;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle at 0 0%, rgba(255, 255, 224, 0) 19px, #faf6e7 20px), radial-gradient(circle at 100% 60%, rgba(255, 255, 224, 0) 19px, #faf6e7 20px);
+  background-position: top left, top right;
+}
+
+.album-item:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+.album-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-family: "Abril Fatface", serif;
+  border: none;
+}
+
+.album-artist {
+  font-size: 14px;
+  color: #666;
+    font-family: "Coiny", system-ui;
+}
+
+.album-cover {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #333333;
+  margin-bottom: 10px;
+  border: 1px solid #000;
+}
+
+.album-crit {
+  background-color: #e89fae;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 3px dotted #000;
+}
+
+/* Gaya untuk detail album */
+#albumDetails {
+  margin-top: 20px;
+}
+
+.album-details {
+  position: fixed;
+  max-width: 480px;
+  background-color: #99aaaa;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 99999;
+  min-height: 200vh;
+  overflow-x: scroll;
+}
+
+.album-details-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.album-details-artist {
+  font-size: 18px;
+  color: #666;
+}
+
+.album-details-genre,
+.album-details-tanggal {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.album-details-cover {
+  width: 200px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
 
 .quote-container {
   position: relative;
@@ -709,7 +898,7 @@ article {
   font-size: 10rem;
   text-transform: uppercase;
   font-family: 'Squada One', cursive;
-  color: #E02F2C
+  color: #E02F2C;
 }
 
 .row h4 {
@@ -884,15 +1073,15 @@ sup {
 @media screen and (max-width: 500px) {
   .record {
     position: relative;
-    bottom: 170px;
+    bottom: 220px;
     width: 100%;
   }
 
   .circle-text {
     text-align: center;
     position: relative;
-    top: -280px;
+    top: -20em;
     z-index: 20;
-    margin-bottom: -17em;
+    margin-bottom: -20em;
   }
 }
