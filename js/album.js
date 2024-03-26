@@ -53,14 +53,18 @@ fetch('json/album.json')
       render() {
         const albumDetailsContainer = document.getElementById('albumDetails');
         albumDetailsContainer.innerHTML = `
-          <div class="album-details">
-            <button id="closeButton">Close</button>
-            <h2 class="album-details-title">${this.album.title}</h2>
-            <p class="album-details-artist">Artist: ${this.album.artist}</p>
-            <p class="album-details-genre">Genre: ${this.album.genre}</p>
-            <p class="album-details-tanggal">Release Year: ${this.album.tanggal}</p>
-            <img src="${this.album.cover}" alt="${this.album.title}" class="album-details-cover" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
-          </div>
+        <div class="album-details-container">
+        <button id="closeButton">Close</button>
+        <div class="album-details">
+          <h2 class="album-details-title">${this.album.title}</h2>
+          <img src="${this.album.cover}" alt="${this.album.title}" class="album-details-cover" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+          <p class="album-details-artist">Artist: ${this.album.artist}</p>
+          <p class="album-details-genre">Genre: ${this.album.genre}</p>
+          <p class="album-details-tanggal">Release Year: ${this.album.tanggal}</p>
+        </div>
+      </div>
+      
+      
         `;
 
         // Tambahkan event listener untuk tombol close

@@ -43,6 +43,7 @@
 }
 </script>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="student.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -153,6 +154,8 @@
             </div>
           </div>
 
+          
+
 
         <div id="productDetails" class="product-details"></div>
 
@@ -198,6 +201,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
 
 
 
@@ -421,6 +456,19 @@ function closeOnboarding() {
 showPage(currentPage);
 
         </script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+         <script>
+             document.getElementById('btnSave').addEventListener('click', function () {
+                 var element = document.getElementById('widget');
+                 html2pdf(element, {
+                     margin: 1,
+                     filename: 'student_info.pdf',
+                     image: { type: 'jpeg', quality: 0.98 },
+                     html2canvas: { scale: 5 },
+                     jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                 });
+             });
+         </script>
 
 </body>
 

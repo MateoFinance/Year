@@ -34,7 +34,7 @@ body:focus {
 /* CSS untuk Dark UI Aplikasi Restoran Elegan dengan Warna Emas */
 
 body {
-  color: var(--grey-text);
+  color: #000;
   font-family: Open Sans, Helvetica, sans-serif;
   background-color: #ffff;
 }
@@ -777,7 +777,7 @@ body {
   margin-top: 20px;
 }
 
-.album-details {
+.album-details-container {
   position: fixed;
   max-width: 480px;
   background-color: #99aaaa;
@@ -790,9 +790,29 @@ body {
   overflow-x: scroll;
 }
 
+.album-details-container button {
+  margin: 20px;
+  padding: 10px;
+  color: #000;
+  background-color: #e89fae;
+}
+
+.album-details {
+  margin: 20px;
+  padding: 20px;
+  background-color: #faf6e7;
+  min-height: 100vh;
+}
+
 .album-details-title {
   font-size: 24px;
   margin-bottom: 10px;
+  text-align: center;
+  background-color: #e43d31;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #fff;
 }
 
 .album-details-artist {
@@ -807,7 +827,7 @@ body {
 }
 
 .album-details-cover {
-  width: 200px;
+  width: 100%;
   border-radius: 5px;
   margin-top: 20px;
 }
@@ -1096,6 +1116,8 @@ sup {
   color: rgba(0, 0, 0, .4);
 
 }
+
+
 
 
 @keyframes bubbleChat {
