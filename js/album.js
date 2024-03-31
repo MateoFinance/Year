@@ -1,4 +1,3 @@
-// Ambil data dari file JSON album
 fetch('json/album.json')
   .then(response => response.json())
   .then(albums => {
@@ -54,17 +53,19 @@ fetch('json/album.json')
         const albumDetailsContainer = document.getElementById('albumDetails');
         albumDetailsContainer.innerHTML = `
         <div class="album-details-container">
-        <button id="closeButton">Close</button>
+        <div class="album-details-button">
+        <div id="closeButton">
+        <a href="#"><i class="fas fa-chevron-left"></i></a>
+      </div>
+</div>
         <div class="album-details">
           <h2 class="album-details-title">${this.album.title}</h2>
           <img src="${this.album.cover}" alt="${this.album.title}" class="album-details-cover" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
-          <p class="album-details-artist">Artist: ${this.album.artist}</p>
-          <p class="album-details-genre">Genre: ${this.album.genre}</p>
-          <p class="album-details-tanggal">Release Year: ${this.album.tanggal}</p>
+          <p class="album-details-artist">${this.album.artist}</p>
+          <p class="album-details-tanggal">Date: ${this.album.tanggal}</p>
+          <p class="album-details-Description">${this.album.description}</p>
         </div>
       </div>
-      
-      
         `;
 
         // Tambahkan event listener untuk tombol close
@@ -88,37 +89,48 @@ fetch('json/album.json')
       }
     }
 
-    // Kode untuk tombol kategori
-    const categoryButtonsContainer = document.getElementById('categoryButtons');
+// Kode untuk tombol kategori
+const categoryButtonsContainer = document.getElementById('categoryButtons');
 
-    // Daftar kategori
-    const categories = ['All', 'Pop', 'Rock', 'Jazz', 'Hip-Hop', 'Electronic'];
+// Buat set baru untuk menyimpan tahun-tahun yang unik
+const years = new Set(albums.map(album => album.tanggal));
 
-    // Tampilkan tombol untuk setiap kategori
-    categories.forEach(category => {
-      const categoryButton = document.createElement('button');
-      categoryButton.textContent = category;
-      categoryButton.classList.add('category-button');
-      categoryButtonsContainer.appendChild(categoryButton);
+// Tambahkan kategori "All"
+years.add('All');
 
-      // Tambahkan event listener untuk setiap kategori
-      categoryButton.addEventListener('click', () => {
-        filterAlbumsByCategory(category);
-      });
+// Tampilkan tombol untuk setiap tahun (kategori)
+years.forEach(year => {
+  const categoryButton = document.createElement('button');
+  categoryButton.textContent = year;
+  categoryButton.classList.add('category-button');
+  categoryButtonsContainer.appendChild(categoryButton);
+
+  // Tambahkan event listener untuk setiap kategori (tahun)
+  categoryButton.addEventListener('click', () => {
+    // Hapus kelas 'active' dari semua tombol kategori
+    document.querySelectorAll('.category-button').forEach(button => {
+      button.classList.remove('active');
     });
 
-    // Fungsi untuk memfilter album berdasarkan kategori
-    function filterAlbumsByCategory(category) {
-      let filteredAlbums;
-      if (category === 'All') {
-        // Jika kategori "All" dipilih, tampilkan semua album
-        displayAlbums(albums);
-        return; // Keluar dari fungsi setelah menampilkan semua album
-      }
-      // Jika kategori lain dipilih, filter album berdasarkan kategori
-      filteredAlbums = albums.filter(album => album.genre === category);
-      displayFilteredAlbums(filteredAlbums);
+    // Tandai tombol yang diklik sebagai aktif
+    categoryButton.classList.add('active');
+
+    if (year === 'All') {
+      displayAlbums(albums); // Tampilkan semua album jika kategori "All" dipilih
+    } else {
+      filterAlbumsByCategory(year);
     }
+  });
+});
+
+// Fungsi untuk memfilter album berdasarkan kategori (tahun)
+function filterAlbumsByCategory(year) {
+  let filteredAlbums;
+  // Filter album berdasarkan tahun
+  filteredAlbums = albums.filter(album => album.tanggal === year);
+  displayFilteredAlbums(filteredAlbums);
+}
+
 
     // Fungsi untuk menampilkan album yang sudah difilter
     function displayFilteredAlbums(filteredAlbums) {

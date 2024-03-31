@@ -13,30 +13,31 @@
     "artist": "The Beatles",
     "genre": "Rock",
     "tanggal": 1969,
-    "cover": "https://example.com/abbey-road-cover.jpg"
+    "cover": "https://example.com/abbey-road-cover.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 3,
     "title": "Kind of Blue",
     "artist": "Miles Davis",
-    "genre": "Jazz",
     "tanggal": 1959,
-    "cover": "https://example.com/kind-of-blue-cover.jpg"
+    "cover": "https://example.com/kind-of-blue-cover.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 4,
     "title": "The Marshall Mathers LP",
     "artist": "Eminem",
-    "genre": "Hip-Hop",
     "tanggal": 2000,
-    "cover": "https://example.com/marshall-mathers-lp-cover.jpg"
+    "cover": "https://example.com/marshall-mathers-lp-cover.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "id": 5,
     "title": "Random Access Memories",
     "artist": "Daft Punk",
-    "genre": "Electronic",
-    "tanggal": 2013,
-    "cover": "https://example.com/random-access-memories-cover.jpg"
+    "tanggal": 2000,
+    "cover": "https://example.com/random-access-memories-cover.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   }
 ]

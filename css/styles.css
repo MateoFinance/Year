@@ -384,6 +384,7 @@ body {
   color: #000;
   background-color: #e89fae;
   padding: 10px;
+  font-size: 15px;
   border-radius: 5px;
   border: 1px solid #000;
 }
@@ -661,6 +662,10 @@ body {
   background-color: #e89fae;
 }
 
+.category-button.active {
+  background-color: #E02F2C;
+}
+
 #home {
   min-height: 200vh;
 }
@@ -768,6 +773,7 @@ body {
   background-color: #e89fae;
   color: #fff;
   padding: 10px;
+  margin-top: 5px;
   border-radius: 5px;
   border: 3px dotted #000;
 }
@@ -780,56 +786,67 @@ body {
 .album-details-container {
   position: fixed;
   max-width: 480px;
-  background-color: #99aaaa;
+  background-color: #faf6e7;
   top: 0;
   bottom: 0;
   margin: 0 auto;
   width: 100%;
   z-index: 99999;
-  min-height: 200vh;
-  overflow-x: scroll;
+  overflow-y: scroll;
 }
 
-.album-details-container button {
-  margin: 20px;
+.album-details-button a {
   padding: 10px;
   color: #000;
+  border: 1px solid #000;
+  border-radius: 5px;
   background-color: #e89fae;
+  font-size: 15px;
 }
+
+.album-details-button {
+  margin: 50px 20px;
+}
+
 
 .album-details {
   margin: 20px;
   padding: 20px;
   background-color: #faf6e7;
-  min-height: 100vh;
+  border: 1px solid #000;
+  border-radius: 5px;
 }
 
 .album-details-title {
   font-size: 24px;
-  margin-bottom: 10px;
-  text-align: center;
-  background-color: #e43d31;
-  padding: 10px;
-  border: 1px solid #000;
+  text-align: left;
+  font-family: "Abril Fatface", serif;
   border-radius: 5px;
-  color: #fff;
+  color: #000000;
 }
 
 .album-details-artist {
   font-size: 18px;
   color: #666;
+  margin-bottom: 10px;
 }
 
-.album-details-genre,
+.album-details-description,
 .album-details-tanggal {
   font-size: 16px;
   margin-bottom: 5px;
+  background-color: #E02F2C;
+  color: #fff;
+  display: inline-block;
 }
 
 .album-details-cover {
   width: 100%;
   border-radius: 5px;
   margin-top: 20px;
+  object-fit: cover;
+  height: 200px;
+  border: 1px solid #000;
 }
 
 #onboarding-container {
@@ -898,20 +915,20 @@ body {
 .quote-container {
   position: relative;
   width: 100%;
-  height: auto78zgt;
-  background-color: #f0f0f0;
-  border: 2px solid #794A3A;
+  padding: 30px 20px;
 }
 
 .bubble-chat {
   position: relative;
   margin: 10px;
+  margin-left: 30px;
   padding: 10px;
-  background-color: #7fd8be;
+  background-color: #68C7C1;
   animation: bubbleChat 5s ease infinite;
-  border: 3px solid #794A3A;
-
+  border: 3px dotted #000;
+  border-radius: 5px;
   align-items: center;
+  font-family: "Coiny", system-ui;
   justify-content: center;
 }
 
@@ -923,8 +940,8 @@ body {
   top: -25px;
   left: -20px;
   object-fit: cover;
-  border: 3px solid #794A3A;
-  margin-right: 20px;
+  border: 2px solid #000000;
+  border-radius: 50px;
   z-index: 5;
 }
 
