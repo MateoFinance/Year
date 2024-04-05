@@ -289,14 +289,14 @@ function displayProductDetails(product) {
 
 
   productDetails.innerHTML = `
-  <div class="container-details">
+<div class="container-details">
   <div class="con-details">
     <div class="header-details">
       <div id="closeButton" class="left">
         <a href="#"><i class="fas fa-chevron-left"></i></a>
       </div>
       <div class="right">
-        <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+        <a id="showPopupButton"><i class="fas fa-ellipsis-h"></i></a>
       </div>
     </div>
 
@@ -306,20 +306,16 @@ function displayProductDetails(product) {
           <p>Student Number ${product.alamat.kode_pos}</p>
           <div class="row">
             <div class="block">
-              <img src="pletia.png" alt="Turkish Airlines Logo" 
-                title="Turkish Airlines">
+              <img src="pletia.png" alt="Turkish Airlines Logo" title="Turkish Airlines">
             </div>
-            <div class="block">
-              <div class="punch-hole">
-              </div>
-            </div>
+            <div class="block punch-hole"></div>
             <div class="block">
               <p>PLETIA HIGH SCHOOL</p>
             </div>
           </div>
         </div>
         <div class="image-det">
-        <img src="${product.foto}" alt="${product.nama}"  onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+          <img src="${product.foto}" alt="${product.nama}" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
         </div>
         <div class="main">
           <h3>${product.nama} #${product.kelas}</h3>
@@ -344,8 +340,7 @@ function displayProductDetails(product) {
             </div>
             <div class="row">
               <h2> Alamat</h2>
-              <p>${product.alamat.jalan}, ${product.alamat.kota}, ${product.alamat.provinsi}, ${product.alamat.kode_pos}
-              </p>
+              <p>${product.alamat.jalan}, ${product.alamat.kota}, ${product.alamat.provinsi}, ${product.alamat.kode_pos}</p>
             </div>
           </div>
           <div class="container-row">
@@ -372,69 +367,85 @@ function displayProductDetails(product) {
               <img src="barcode.png" alt="" srcset="">
             </div>
           </div>
+        </div>
       </article>
       <div class="container-code">
-      <div class="button-container">
-      <button class="button">Tombol 1</button>
-      <button class="button">Tombol 2</button>
-    </div>
+        <div class="button-container">
+          <button class="button">Tombol 1</button>
+          <button class="button">Tombol 2</button>
+        </div>
       </div>
-      <div id="widget">
-      <div id="student-info">
-          <div class="student-info-header">
-              <div class="inner-student-info">
-                  <div class="logo">
-                      <img src="logokls.png">
-                  </div>
-                  <div class="school-name">
-                      Pletia High school
-                  </div>
-                  <div class="motto">non est ad luna mollis e terris via</div>
-              </div>
-          </div>
-          <div class="ribbon"></div>
-          <div class="main-student-info">
-              <div class="bio-container">
-                  <div class="student-name">${product.nama}</div>
-                  <div class="separator"></div>
-                  <div class="student-fields">
-                      Date of Birth<br>
-                      Nationality<br>
-                      Academic Year<br>
-                      Luna Archetype<br>
-                      Squad Specialisation<br>
-                  </div>
-                  <div class="student-content">
-                      12/25/2001<br>
-                      Britannian<br>
-                      2019<br>
-                      Manipulator<br>
-                      Intelligence<br>
-                  </div>
-                  <div class="id-number">
-                      <img src="barcode.png" alt="" srcset="">
-                  </div>
-              </div>
-              <div class="image-container">
-              <img src="${product.foto}" alt="${product.nama}"  onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
-              </div>
-          </div>
-          <div class="ribbon"></div>
-      </div>
-
-      <br />    </div>
-      <input type="button" id="btnSave" value="Save PDF" />
     </div>
   </div>
 </div>
 
+
 `;
 
-  const closeButton = document.getElementById('closeButton');
-  closeButton.addEventListener('click', () => {
-    productDetails.innerHTML = '';
+
+  // Menambahkan event listener untuk tombol "Tampilkan Popup"
+  const showPopupButton = document.getElementById('showPopupButton');
+  showPopupButton.addEventListener('click', () => {
+    // Panggil fungsi untuk menampilkan popup saat tombol diklik
+    showPopup();
   });
 
+  // Fungsi untuk menampilkan popup
+  function showPopup() {
+    // Buat elemen popup
+    const popupElement = document.createElement('div');
+    popupElement.classList.add('popup');
+    popupElement.innerHTML = `
+      <div class="popup-content">
+        
+
+        <div class="concert-ticket"> 
+        <span id="closePopupButton" class="close-popup">&times;</span> 
+        <div class="ticket-header">
+        <h2>Social<b>Ticket</b></h2>
+      </div>
+        <div class="logot">
+            <img src="${product.foto}" alt="Concert Logo"> <!-- Ganti URL logo sesuai kebutuhan -->
+        </div>
+      
+        <div class="ticket-nick">
+            <h1>${product.nama}</h1>
+        </div>
+    
+      <div class="ticket-body">
+        <div class="ticket-details">
+          <p>Pengalaman</p>
+        </div>
+        <div class="ticket-price">
+          <p>0</p>
+        </div>
+      </div>
+      <div class="ticket-desk">
+        <p>${product.quote}</p>
+    </div>
+      <div class="barcodee">
+        <img src="barcode.png" alt="Barcode"> <!-- Ganti URL barcode sesuai kebutuhan -->
+      </div>
+    </div>
+      </div>
+    `;
+
+    // Tambahkan elemen popup ke dalam body dokumen
+    document.body.appendChild(popupElement);
+
+    // Tambahkan event listener untuk tombol "Close" pada popup
+    const closePopupButton = popupElement.querySelector('#closePopupButton');
+    closePopupButton.addEventListener('click', () => {
+      // Hapus elemen popup saat tombol "Close" diklik
+      document.body.removeChild(popupElement);
+    });
+  }
+
+  // Menambahkan event listener untuk tombol "Close" pada detail produk
+  const closeButton = document.getElementById('closeButton');
+  closeButton.addEventListener('click', () => {
+    productDetails.innerHTML = ''; // Kosongkan konten detail produk
+  });
   document.getElementById('btnSave').addEventListener('click', function () {
     var element = document.getElementById('widget');
     html2pdf(element, {

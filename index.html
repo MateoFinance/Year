@@ -44,6 +44,8 @@
 </script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="student.css">
+    <link rel="stylesheet" href="css/flip.css">
+    <script src="js/flip.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -168,7 +170,7 @@
                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" /></svg>
                 <span>Home</span>
             </div>
-            <div class="tab" data-tab="categories">
+            <div class="tab" data-tab="categories" style="display: none;">
                 <?xml version="1.0" ?><svg fill="none" height="24" stroke-width="1.5" viewBox="0 0 24 24" width="24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -176,7 +178,7 @@
                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" /></svg>
                 <span>Recipes</span>
             </div>
-            <div class="tab" data-tab="search">
+            <div class="tab" data-tab="search" style="display: none;">
                 <?xml version="1.0" ?><svg fill="none" height="24" stroke-width="1.5" viewBox="0 0 24 24" width="24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M15.5 15.5L19 19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
@@ -191,7 +193,7 @@
                     <path
                         d="M5 21V5C5 3.89543 5.89543 3 7 3H17C18.1046 3 19 3.89543 19 5V21L13.0815 17.1953C12.4227 16.7717 11.5773 16.7717 10.9185 17.1953L5 21Z"
                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                <span>Favorites</span>
+                <span>Memories</span>
             </div>
         </div>
         <div class="grad-container">
@@ -331,9 +333,7 @@
 
         <div class="content" id="search" style="display: none;">
             <!-- Content for Search tab -->
-            <div class="greeting-container">
-                <h1 id="greeting"></h1>
-            </div>
+
            
         </div>
 
@@ -364,6 +364,7 @@
                 </div>
             </div>
 
+            
             <div id="categoryButtons"></div>
             <div id="albumList"></div>
             <div id="albumDetails"></div>

@@ -1,173 +1,90 @@
-<div id="studentcardfront" class="studentcar" data-side='frontside'>
-  <div id="SchoolName" class="SchoolName">
-    <h1 id='Schnalo'>Naseem Kharal Government Boys Higher Secondary School Ripri</h1>
-    <p id='semis'>
-      (415020315)
-    </p>
-    <p>Khuhra Road Ripri, Tehsil Gambat, Khairpur</p>
-    <p id="scard" class="scard">
-      <strong>Student Identity Card</strong>
-    </p>
-  </div>
-  <div class="studentInfo">
-    <div id="StudentData" class="StudentData">
-      <h1>Azhar Ali</h1>
-      <p>Father's Name: Ghulam Hussain Mallah</p>
-      <p>G.R No: 1206</p>
-      <p>Roll No: 104</p>
-      <p>Class: Matric A</p>
-    </div>
-    <div id="photo" class="photo">
-      <img src="" alt="" srcset="">
-    </div>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Flip Item</title>
+<style>
+  .flip-container {
+    perspective: 1000px;
+    padding: 20px;
+  }
 
+  .flipper {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(0deg);
+  }
 
-<div class="circle-text">
-  <svg viewBox="0 0 100 100">
-    <path id="circlePath" fill="none" stroke="transparent" d="M50 10 A 40 40 0 0 1 50 90 A 40 40 0 0 1 50 10"></path>
-    <text>
-      <textPath xlink:href="#circlePath">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      </textPath>
-    </text>
-  </svg>
-</div>
+  .front, .back {
+    backface-visibility: hidden;
+    padding: 20px;
 
+  }
 
+  .front {
+    background: #3498db;
+    color: white;
 
+  }
 
+  .back {
+    background: #e74c3c;
+    color: white;
+    transform: rotateY(180deg);
+  }
 
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
+  .flip-button {
+    text-align: center;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container-details">
-  <div class="con-details">
-    <div class="header-details">
-      <div id="closeButton" class="left">
-        <a href="#"><i class="fas fa-chevron-left"></i> Kembali</a>
-      </div>
-      <div class="right">
-        <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+<div class="flip-container">
+  <div class="flipper">
+    <div class="front">
+      <div class="centered">
+        Front Side
       </div>
     </div>
-
-    <div class="product-details-new">
-      <article>
-        <div class="top">
-          <p>printed in Turkey No.4145.25</p>
-          <div class="row">
-            <div class="block">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25555/turk.png" alt="Turkish Airlines Logo"
-                title="Turkish Airlines">
-            </div>
-            <div class="block">
-              <div class="punch-hole">
-              </div>
-            </div>
-            <div class="block">
-              <p>THY</p>
-            </div>
-          </div>
-        </div>
-        <div class="image-det">
-          <img src="https://i.pinimg.com/564x/8c/85/a9/8c85a98a445d87ec6d8c3a84fd7985cc.jpg" alt="">
-        </div>
-        <div class="main">
-          <h3>Alfin Firmansyah</h3>
-          <div class="row">
-            <h3></h3>
-            <h2> Siswa</h2>
-            <h1>JFK</h1>
-          </div>
-          <div class="container-row">
-            <div class="row">
-              <h2> Kelas</h2>
-              <p>${product.kelas}</p>
-            </div>
-            <div class="row">
-              <h2> Jurusan</h2>
-              <p>${product.jurusan}</p>
-            </div>
-          </div>
-          <div class="container-row">
-            <div class="row">
-              <h2> Tanggal Lahir</h2>
-              <p>${product.tanggal_lahir}</p>
-            </div>
-            <div class="row">
-              <h2> Alamat</h2>
-              <p>${product.alamat.jalan}, ${product.alamat.kota}, ${product.alamat.provinsi}, ${product.alamat.kode_pos}
-              </p>
-            </div>
-          </div>
-          <div class="container-row">
-            <div class="row">
-              <h2>Nomor</h2>
-              <p>${product.nomor_telepon}</p>
-            </div>
-            <div class="row">
-              <h2>Email</h2>
-              <p>${product.email}</p>
-            </div>
-          </div>
-          <div class="container-row">
-            <div class="row">
-              <h2>Prestasi</h2>
-              <ul>
-                ${product.prestasi.map(prestasi => `<li>${prestasi.judul} (${prestasi.tahun})</li>`).join('')}
-              </ul>
-            </div>
-            <div class="row">
-              <h2>Kegiatan</h2>
-              <ul>
-                ${product.kegiatan.map(kegiatan => `<li>${kegiatan}</li>`).join('')}
-              </ul>
-            </div>
-          </div>
-          <div class="container-row">
-            <div class="row">
-              <h2>Deskripsi</h2>
-              <p>${product.deskripsi}</p>
-            </div>
-            <div class="row">
-              <h2>Foto</h2>
-
-            </div>
-          </div>
-      </article>
-      <article>
-
-      </article>
+    <div class="back">
+      <div class="centered">
+        Back Side
+      </div>
     </div>
   </div>
 </div>
 
+<div class="flip-button">
+  <button onclick="flip()">Flip</button>
+</div>
 
-      
+<script>
+  var isFlipped = false;
+
+  function flip() {
+    var flipper = document.querySelector('.flipper');
+    if (!isFlipped) {
+      flipper.style.transform = 'rotateY(180deg)';
+      isFlipped = true;
+    } else {
+      flipper.style.transform = 'rotateY(0deg)';
+      isFlipped = false;
+    }
+  }
+</script>
+
+</body>
+</html>

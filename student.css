@@ -15,6 +15,7 @@
     font-family: 'Squada One', cursive;
     margin: 0 auto;
     overflow: hidden;
+    display: none;
 }
 
 .student-info-header {
