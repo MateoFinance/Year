@@ -1198,24 +1198,9 @@ sup {
   color: #f2f2f2;
 }
 
-.ticket-body {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #000;
-  padding-bottom: 10px;
-}
 
-.ticket-details p {
-  margin: 5px 0;
-  color: #4d4d4d;
-}
 
-.ticket-price p {
-  margin: 5px 0;
-  color: #4d4d4d;
-  font-weight: bold;
-}
+
 
 .logot {
   margin-top: 20px;
@@ -1247,25 +1232,41 @@ sup {
   font-family: 'Squada One', cursive;
 }
 .ticket-desk p {
-  margin-bottom: 50px;
   font-size: 13px;
   margin-top: 10px;
 }
 
-#imageList , #imageListPopup{
+#imageList {
   display: flex;
   float: left;
-  width: 100px;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 #imageList img {
   width: 50px;
 }
 
+#imageListPopup {
+  display: flex;
+  float: left;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 20px 0px;
+  width: 100%;
+}
+
 #imageListPopup img {
-  width: 20px;
+  width: 40px;
+}
+
+.zodiac-icon-container img{
+  width: 50px;
+  background-color: #fa7634;
+  padding: 5px;
+  border-radius: 50px 50px;
 }
 
 

@@ -373,6 +373,9 @@ function displayProductDetails(product) {
         <div class="button-container">
         <ul id="imageList"></ul>
         </div>
+        <div class="zodiac-icon-container">
+        <img id="zodiacIcon" src="" alt="Zodiac Icon">
+      </div>
       </div>
     </div>
   </div>
@@ -380,6 +383,11 @@ function displayProductDetails(product) {
 
 
 `;
+
+const zodiacIcon = determineZodiacIcon(product.tanggal_lahir);
+const zodiacIconElement = document.getElementById('zodiacIcon');
+zodiacIconElement.src = zodiacIcon;
+zodiacIconElement.alt = "Zodiac Icon";
 
 
 const imageList = document.getElementById('imageList');
@@ -400,6 +408,11 @@ if (product.extra && product.extra.pmr) {
   addImageToList(imageList, "logokls.png"); // Ganti dengan path gambar pmr
 }
 
+  // Menambahkan event listener untuk tombol "Close"
+  const closeButton = document.getElementById('closeButton');
+  closeButton.addEventListener('click', () => {
+    productDetails.innerHTML = ''; // Kosongkan konten detail produk
+  });
 
 
   // Menambahkan event listener untuk tombol "Tampilkan Popup"
@@ -408,6 +421,8 @@ if (product.extra && product.extra.pmr) {
     // Panggil fungsi untuk menampilkan popup saat tombol diklik
     showPopup();
   });
+
+  
 
 // Fungsi untuk menampilkan popup
 function showPopup() {
@@ -427,16 +442,11 @@ function showPopup() {
         <div class="ticket-nick">
           <h1>${product.nama}</h1>
         </div>
-        <div class="ticket-body">
-          <div class="ticket-details">
-            <p>Pengalaman</p>
-          </div>
-          <div class="ticket-price">
-          <ul id="imageListPopup"></ul> <!-- Tambahkan imageList di sini -->
-          </div>
-        </div>
         <div class="ticket-desk">
           <p>${product.quote}</p>
+        </div>
+        <div class="ticket-details">
+        <ul id="imageListPopup"></ul> <!-- Tambahkan imageList di sini -->
         </div>
         <div class="barcodee">
           <img src="barcode.png" alt="Barcode"> <!-- Ganti URL barcode sesuai kebutuhan -->
@@ -481,10 +491,45 @@ function showPopup() {
   const age = calculateAge(product.tanggal_lahir);
   document.getElementById('umur').textContent = `Umur: ${age} tahun`;
 
-  // Tentukan ikon zodiak dan tampilkan
-  const zodiacIcon = determineZodiacIcon(product.tanggal_lahir);
-  document.getElementById('zodiacIcon').src = zodiacIcon;
 
+
+}
+
+
+
+
+// Fungsi untuk menentukan ikon zodiak berdasarkan tanggal lahir
+function determineZodiacIcon(birthDateString) {
+  const birthDate = new Date(birthDateString);
+  const month = birthDate.getMonth() + 1; // Months are zero indexed
+  const day = birthDate.getDate();
+
+  // Menentukan zodiak berdasarkan bulan dan tanggal lahir
+  if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
+    return 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Aquarius_symbol_%28bold%29.svg/480px-Aquarius_symbol_%28bold%29.svg.png';
+  } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
+    return 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Pisces_symbol_%28bold%29.svg/480px-Pisces_symbol_%28bold%29.svg.png';
+  } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+    return 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Aries_symbol_%28bold%29.svg/480px-Aries_symbol_%28bold%29.svg.png';
+  } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+    return 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Taurus_symbol_%28bold%29.svg/40px-Taurus_symbol_%28bold%29.svg.png';
+  } else if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) {
+    return 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Gemini_symbol_%28bold%29.svg/480px-Gemini_symbol_%28bold%29.svg.png';
+  } else if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) {
+    return 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Cancer_symbol_%28bold%29.svg/480px-Cancer_symbol_%28bold%29.svg.png';
+  } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+    return 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Leo_symbol_%28bold%29.svg/480px-Leo_symbol_%28bold%29.svg.png';
+  } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+    return 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Virgo_symbol_%28bold%29.svg/480px-Virgo_symbol_%28bold%29.svg.png';
+  } else if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) {
+    return 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Libra_symbol_%28bold%29.svg/480px-Libra_symbol_%28bold%29.svg.png';
+  } else if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) {
+    return 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Scorpius_symbol_%28bold%29.svg/480px-Scorpius_symbol_%28bold%29.svg.png';
+  } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
+    return 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Sagittarius_symbol_%28bold%29.svg/480px-Sagittarius_symbol_%28bold%29.svg.png';
+  } else { // Capricorn
+    return 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Sagittarius_symbol_%28bold%29.svg/480px-Sagittarius_symbol_%28bold%29.svg.png';
+  }
 }
 
 function addImageToList(list, imagePath) {
@@ -529,39 +574,6 @@ function calculateAge(birthDateString) {
 }
 
 
-// Fungsi untuk menentukan ikon zodiak berdasarkan tanggal lahir
-function determineZodiacIcon(birthDateString) {
-  const birthDate = new Date(birthDateString);
-  const month = birthDate.getMonth() + 1; // Months are zero indexed
-  const day = birthDate.getDate();
-
-  // Menentukan zodiak berdasarkan bulan dan tanggal lahir
-  if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
-    return 'aquarius.png';
-  } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
-    return 'pisces.png';
-  } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
-    return 'https://cdn.pixabay.com/photo/2013/07/13/11/57/lion-159027_1280.png';
-  } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
-    return 'taurus.png';
-  } else if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) {
-    return 'gemini.png';
-  } else if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) {
-    return 'cancer.png';
-  } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
-    return 'leo.png';
-  } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
-    return 'virgo.png';
-  } else if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) {
-    return 'libra.png';
-  } else if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) {
-    return 'scorpio.png';
-  } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
-    return 'sagittarius.png';
-  } else { // Capricorn
-    return 'capricorn.png';
-  }
-}
 
 
 
