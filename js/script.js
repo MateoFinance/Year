@@ -306,7 +306,7 @@ function displayProductDetails(product) {
           <p>Student Number ${product.alamat.kode_pos}</p>
           <div class="row">
             <div class="block">
-              <img src="pletia.png" alt="Turkish Airlines Logo" title="Turkish Airlines">
+              <img src="Pletia.png" alt="Turkish Airlines Logo" title="Turkish Airlines">
             </div>
             <div class="block punch-hole"></div>
             <div class="block">
