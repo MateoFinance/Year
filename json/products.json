@@ -11,6 +11,13 @@
             "provinsi": "DKI Jakarta",
             "kode_pos": "12345"
         },
+        "extra": {
+            "angkatan": true,
+            "sekolah": true,
+            "osis": true,
+            "pramuka": false,
+            "pmr": true
+          },
         "nomor_telepon": "+6281234567890",
         "email": "john.doe@example.com",
         "prestasi": [{

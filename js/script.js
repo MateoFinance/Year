@@ -371,8 +371,7 @@ function displayProductDetails(product) {
       </article>
       <div class="container-code">
         <div class="button-container">
-          <button class="button">Tombol 1</button>
-          <button class="button">Tombol 2</button>
+        <ul id="imageList"></ul>
         </div>
       </div>
     </div>
@@ -383,6 +382,26 @@ function displayProductDetails(product) {
 `;
 
 
+const imageList = document.getElementById('imageList');
+
+if (product.extra && product.extra.angkatan) {
+  addImageToList(imageList, "angkatan.png"); // Ganti dengan path gambar osis
+}
+if (product.extra && product.extra.sekolah) {
+  addImageToList(imageList, "Pletia.png"); // Ganti dengan path gambar osis
+}
+if (product.extra && product.extra.osis) {
+  addImageToList(imageList, "osis.png"); // Ganti dengan path gambar osis
+}
+if (product.extra && product.extra.pramuka) {
+  addImageToList(imageList, "Pletia.png"); // Ganti dengan path gambar pramuka
+}
+if (product.extra && product.extra.pmr) {
+  addImageToList(imageList, "logokls.png"); // Ganti dengan path gambar pmr
+}
+
+
+
   // Menambahkan event listener untuk tombol "Tampilkan Popup"
   const showPopupButton = document.getElementById('showPopupButton');
   showPopupButton.addEventListener('click', () => {
@@ -390,72 +409,72 @@ function displayProductDetails(product) {
     showPopup();
   });
 
-  // Fungsi untuk menampilkan popup
-  function showPopup() {
-    // Buat elemen popup
-    const popupElement = document.createElement('div');
-    popupElement.classList.add('popup');
-    popupElement.innerHTML = `
-      <div class="popup-content">
-        
-
-        <div class="concert-ticket"> 
+// Fungsi untuk menampilkan popup
+function showPopup() {
+  // Buat elemen popup
+  const popupElement = document.createElement('div');
+  popupElement.classList.add('popup');
+  popupElement.innerHTML = `
+    <div class="popup-content">
+      <div class="concert-ticket"> 
         <span id="closePopupButton" class="close-popup">&times;</span> 
         <div class="ticket-header">
-        <h2>Social<b>Ticket</b></h2>
-      </div>
+          <h2>Social<b>Ticket</b></h2>
+        </div>
         <div class="logot">
-            <img src="${product.foto}" alt="Concert Logo"> <!-- Ganti URL logo sesuai kebutuhan -->
+          <img src="${product.foto}" alt="Concert Logo"> <!-- Ganti URL logo sesuai kebutuhan -->
         </div>
-      
         <div class="ticket-nick">
-            <h1>${product.nama}</h1>
+          <h1>${product.nama}</h1>
         </div>
-    
-      <div class="ticket-body">
-        <div class="ticket-details">
-          <p>Pengalaman</p>
+        <div class="ticket-body">
+          <div class="ticket-details">
+            <p>Pengalaman</p>
+          </div>
+          <div class="ticket-price">
+          <ul id="imageListPopup"></ul> <!-- Tambahkan imageList di sini -->
+          </div>
         </div>
-        <div class="ticket-price">
-          <p>0</p>
+        <div class="ticket-desk">
+          <p>${product.quote}</p>
+        </div>
+        <div class="barcodee">
+          <img src="barcode.png" alt="Barcode"> <!-- Ganti URL barcode sesuai kebutuhan -->
         </div>
       </div>
-      <div class="ticket-desk">
-        <p>${product.quote}</p>
     </div>
-      <div class="barcodee">
-        <img src="barcode.png" alt="Barcode"> <!-- Ganti URL barcode sesuai kebutuhan -->
-      </div>
-    </div>
-      </div>
-    `;
+  `;
 
-    // Tambahkan elemen popup ke dalam body dokumen
-    document.body.appendChild(popupElement);
+  // Tambahkan elemen popup ke dalam body dokumen
+  document.body.appendChild(popupElement);
 
-    // Tambahkan event listener untuk tombol "Close" pada popup
-    const closePopupButton = popupElement.querySelector('#closePopupButton');
-    closePopupButton.addEventListener('click', () => {
-      // Hapus elemen popup saat tombol "Close" diklik
-      document.body.removeChild(popupElement);
-    });
-  }
-
-  // Menambahkan event listener untuk tombol "Close" pada detail produk
-  const closeButton = document.getElementById('closeButton');
-  closeButton.addEventListener('click', () => {
-    productDetails.innerHTML = ''; // Kosongkan konten detail produk
+  // Tambahkan event listener untuk tombol "Close" pada popup
+  const closePopupButton = popupElement.querySelector('#closePopupButton');
+  closePopupButton.addEventListener('click', () => {
+    // Hapus elemen popup saat tombol "Close" diklik
+    document.body.removeChild(popupElement);
   });
-  document.getElementById('btnSave').addEventListener('click', function () {
-    var element = document.getElementById('widget');
-    html2pdf(element, {
-        margin: 1,
-        filename: 'student_info.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 5 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-    });
-});
+
+  // Tambahkan gambar tambahan ke dalam imageListPopup
+  const imageListPopup = popupElement.querySelector('#imageListPopup');
+  if (product.extra) {
+    if (product.extra.angkatan) {
+      addImageToList(imageListPopup, "angkatan.png"); // Ganti dengan path gambar angkatan
+    }
+    if (product.extra.sekolah) {
+      addImageToList(imageListPopup, "Pletia.png"); // Ganti dengan path gambar sekolah
+    }
+    if (product.extra.osis) {
+      addImageToList(imageListPopup, "osis.png"); // Ganti dengan path gambar osis
+    }
+    if (product.extra.pramuka) {
+      addImageToList(imageListPopup, "Pletia.png"); // Ganti dengan path gambar pramuka
+    }
+    if (product.extra.pmr) {
+      addImageToList(imageListPopup, "logokls.png"); // Ganti dengan path gambar pmr
+    }
+  }
+}
 
 
   // Hitung umur dan tampilkan
@@ -466,6 +485,15 @@ function displayProductDetails(product) {
   const zodiacIcon = determineZodiacIcon(product.tanggal_lahir);
   document.getElementById('zodiacIcon').src = zodiacIcon;
 
+}
+
+function addImageToList(list, imagePath) {
+  const imageItem = document.createElement('li');
+  const image = document.createElement('img');
+  image.src = imagePath;
+  image.alt = "Product Image";
+  imageItem.appendChild(image);
+  list.appendChild(imageItem);
 }
 
 // Ambil data dari file JSON
