@@ -37,6 +37,7 @@ body {
   color: #000;
   font-family: Open Sans, Helvetica, sans-serif;
   background-color: #ffff;
+  outline: none; /* Menghilangkan efek focus ring saat tombol dalam fokus */
 }
 
 
@@ -228,6 +229,7 @@ body {
   background-color: #faf6e7;
   width: 100%;
   padding: 10px;
+  overflow: hidden;
 }
 
 
@@ -241,32 +243,33 @@ body {
   color: #000;
   border: 1px solid #000;
   position: relative;
-  top: -15px;
-  left: 75px;
+  margin: 0px;
   padding: 5px 30px;
-  transform: rotate(6deg);
   display: inline-block;
   font-size: 12px;
   font-weight: 600;
   font-family: "Coiny", system-ui;
+  left: 80px;
+  border-radius: 5px;
 }
 
 .product-image {
   max-width: 100%;
   width: 100%;
   width: 150px;
-  height: 150px;
+  height: 180px;
   flex-shrink: 0;
   margin-bottom: 5px;
   object-fit: cover;
   border: 1px solid var(--white);
   border-radius: 50%;
-  border: 2px solid #000;
+  border: 3px solid #000;
   filter: grayscale(0%);
 }
 
 .product-image:hover {
   filter: grayscale(0%);
+  
 }
 
 .product-nama {
@@ -275,7 +278,7 @@ body {
   color: #000;
   text-align: left;
   line-height: 1.4;
-  font-family: "Abril Fatface", serif;
+  font-family: "Coiny", system-ui;
 }
 
 .product-info {
@@ -750,7 +753,7 @@ body {
 .album-title {
   font-size: 20px;
   margin-bottom: 5px;
-  font-family: "Abril Fatface", serif;
+  font-family: "Coiny", system-ui;
   border: none;
 }
 
@@ -826,7 +829,7 @@ body {
 .album-details-title {
   font-size: 24px;
   text-align: left;
-  font-family: "Abril Fatface", serif;
+  font-family: "Coiny", system-ui;
   border-radius: 5px;
   color: #000000;
 }
@@ -1083,7 +1086,7 @@ li {
   font-size: 20px;
   text-align: left;
   padding: 10px;
-  font-family: "Abril Fatface", serif;
+  font-family: "Coiny", system-ui;
   font-weight: 600;
   color: #000;
   border-bottom: 1px solid #000;
@@ -1312,7 +1315,7 @@ sup {
     max-width: 480px;
     margin: 0 auto;
     /* Membuat container berada di tengah halaman */
-    background-color: var(--warna-terang);
+    background-color: #faf6e7;
     display: flex;
   }
 

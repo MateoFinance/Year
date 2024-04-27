@@ -238,9 +238,10 @@ function displayProducts(products) {
             <div class="product-card">
             <img src="${product.foto}" alt="${product.nama}" class="product-image" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
             <h3 class="product-nama">${product.nama}</h3>
-            <p class="product-info">
-            ${product.tanggal_lahir}
-            </p>
+            <div class="product-info">
+            <p>${product.tanggal_lahir}</p>
+            
+            </div>
             </div>
         `;
     productList.appendChild(productItem);
